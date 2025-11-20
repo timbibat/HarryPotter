@@ -1,32 +1,40 @@
 :root {
-    --bs-primary: #2C3E50;           /* Indigo Blue */
-    --bs-primary-rgb: 44, 62, 80;
-    
-    --bs-secondary: #FFB7C5;         /* Sakura Pink */
-    --bs-secondary-rgb: 255, 183, 197;
-    
-    --bs-success: #4A7C59;           /* Bamboo Green */
-    --bs-success-rgb: 74, 124, 89;
-    
-    --bs-danger: #E91E63;            /* Deep Pink */
-    --bs-danger-rgb: 233, 30, 99;
-    
-    --bs-warning: #FF6B6B;           /* Sunset Orange */
-    --bs-warning-rgb: 255, 107, 107;
-    
-    --bs-info: #88B04B;              /* Matcha Green */
-    --bs-info-rgb: 136, 176, 75;
-    
-    --bs-light: #FAF9F6;             /* Paper White */
-    --bs-light-rgb: 250, 249, 246;
-    
-    --bs-dark: #36454F;              /* Charcoal */ 
-    --bs-dark-rgb: 54, 69, 79;
-    
+    --bs-primary: #7F0909;
+    /* Gryffindor Crimson (primary/site brand) */
+    --bs-primary-rgb: 127, 9, 9;
+
+    --bs-secondary: #D4AF37;
+    /* Hogwarts Gold (secondary / highlights) */
+    --bs-secondary-rgb: 212, 175, 55;
+
+    --bs-success: #1A472A;
+    /* Slytherin Green */
+    --bs-success-rgb: 26, 71, 42;
+
+    --bs-danger: #8B0000;
+    /* Deep Scarlet accent */
+    --bs-danger-rgb: 139, 0, 0;
+
+    --bs-warning: #F0C419;
+    /* Hufflepuff Gold */
+    --bs-warning-rgb: 240, 196, 25;
+
+    --bs-info: #0E4A8B;
+    /* Ravenclaw Blue */
+    --bs-info-rgb: 14, 74, 139;
+
+    --bs-light: #FBF3E0;
+    /* Parchment / Paper White */
+    --bs-light-rgb: 251, 243, 224;
+
+    --bs-dark: #2B2B2B;
+    /* Ink / Charcoal */
+    --bs-dark-rgb: 43, 43, 43;
+
     /* Link colors */
-    --bs-link-color: #2C3E50;
-    --bs-link-hover-color: #E91E63;
-    
+    --bs-link-color: #D4AF37;
+    --bs-link-hover-color: #7F0909;
+
     /* Border radius */
     --bs-border-radius: 0.5rem;
     --bs-border-radius-lg: 0.75rem;
@@ -34,6 +42,72 @@
 
 .hero-section {
     min-height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    background:
+        linear-gradient(rgba(10, 10, 10, 0.45), rgba(10, 10, 10, 0.45)),
+        linear-gradient(180deg, rgba(212, 175, 55, 0.08), rgba(212, 175, 55, 0.06)),
         url('https://wallpapers.com/images/featured/hogwarts-castle-pictures-0f0g45ihwlijl35w.jpg') center/cover no-repeat;
+}
+
+.hp-card {
+    position: relative;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background: transparent;
+    transition: transform .28s ease, box-shadow .28s ease;
+}
+
+.hp-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(43, 43, 43, 0.18), 0 6px 12px rgba(212, 175, 55, 0.06);
+}
+
+.hp-card .card-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s ease;
+}
+
+.hp-card:hover .card-img {
+    transform: scale(1.06);
+}
+
+.hp-card .name-overlay {
+    width: 100%;
+    padding: 0.45rem 0.75rem;
+    background: linear-gradient(180deg, rgba(255, 249, 236, 0.95), rgba(245, 230, 200, 0.95));
+    border-top: 1px solid rgba(43, 43, 43, 0.05);
+    text-align: center;
+}
+
+.hp-card .name-overlay h5 {
+    margin: 0;
+    color: rgba(var(--bs-dark-rgb), 0.92);
+    font-weight: 700;
+    letter-spacing: 0.02rem;
+    font-size: 1rem;
+}
+
+@media (max-width: 576px) {
+    .hp-card .card-img {
+        height: 200px;
+    }
+
+    .hp-card .name-overlay h5 {
+        font-size: .95rem;
+    }
+}
+
+.hp-card:focus-within,
+.hp-card:focus {
+    outline: 3px solid rgba(var(--bs-secondary-rgb), 0.14);
+    outline-offset: 4px;
+}
+
+.parchment-panel {
+    background: linear-gradient(180deg, rgba(255, 253, 240, 0.97), rgba(250, 240, 220, 0.96));
+    border: 1px solid rgba(43, 43, 43, 0.06);
+    padding: 1rem;
+    border-radius: 0.6rem;
 }
