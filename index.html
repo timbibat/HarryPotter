@@ -176,11 +176,9 @@
 
         window.addEventListener('scroll', highlightNavOnScroll);
 
+        let isDarkMode = localStorage.getItem('theme') !== 'light';
 
-        let isDarkMode = true;
-
-        function toggleTheme() {
-            isDarkMode = !isDarkMode;
+        function applyTheme() {
             const body = document.getElementById('body');
             const nav = document.getElementById('mainNav');
             const icon = document.getElementById('themeIcon');
@@ -227,6 +225,13 @@
                 devText.classList.replace('text-muted', 'text-white-50');
             }
         }
+
+        function toggleTheme() {
+            isDarkMode = !isDarkMode;
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+            applyTheme();
+        }
+        applyTheme();
     </script>
 </body>
 
