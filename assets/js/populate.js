@@ -1,13 +1,13 @@
 var myContainer = document.getElementById("cardContainer");
 if (!myContainer) {
   console.error('cardContainer element not found');
-} else if (typeof Characters === 'undefined' || !Array.isArray(Characters)) {
+} else if (typeof characters === 'undefined' || !Array.isArray(characters)) {
   console.error('Characters array not found or not an array');
 } else {
-  const FALLBACK_IMG = 'assets/img/Hogwarts-Crest.png';
+  const fallbackImg = 'assets/img/Hogwarts-Crest.png';
 
-  Characters.forEach((character) => {
-    const imgSrc = character.img || character.image || FALLBACK_IMG;
+  characters.forEach((character) => {
+    const imgSrc = character.img || character.image || fallbackImg;
 
     myContainer.innerHTML += `
             <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
@@ -25,7 +25,7 @@ if (!myContainer) {
                              style="height: 450px; object-fit: cover; transition: transform 0.4s ease;"
                              onmouseover="this.style.transform='scale(1.05)'"
                              onmouseout="this.style.transform='scale(1)'"
-                             onerror="this.onerror=null;this.src='${FALLBACK_IMG}';">
+                             onerror="this.onerror=null;this.src='${fallbackImg}';">
                         
                         <div class="position-absolute bottom-0 start-0 w-100 d-flex flex-column justify-content-end align-items-center pb-4 pt-5" 
                              style="background: linear-gradient(to top, rgba(0,0,0,0.95) 10%, rgba(0,0,0,0.6) 50%, transparent 100%); pointer-events: none;">
@@ -47,22 +47,22 @@ if (!myContainer) {
 
 const getCharacterDetails = async (characterName) => {
   try {
-    if (typeof Characters === 'undefined' || !Array.isArray(Characters)) {
+    if (typeof characters === 'undefined' || !Array.isArray(characters)) {
       console.error('Characters array not available for getCharacterDetails');
       return;
     }
 
-    const character = Characters.find(c => c.name === characterName);
+    const character = characters.find(c => c.name === characterName);
 
     if (character) {
       document.title = `${character.name}`;
-      const FALLBACK_IMG = 'assets/img/Hogwarts-Crest.png';
+      const fallbackImg = 'assets/img/Hogwarts-Crest.png';
       const profileImgEl = document.getElementById("profileImg");
       if (profileImgEl) {
-        profileImgEl.src = character.img || character.image || FALLBACK_IMG;
+        profileImgEl.src = character.img || character.image || fallbackImg;
         profileImgEl.onerror = () => {
           profileImgEl.onerror = null;
-          profileImgEl.src = FALLBACK_IMG;
+          profileImgEl.src = fallbackImg;
         };
       }
     }

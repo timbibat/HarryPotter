@@ -1,4 +1,4 @@
-var Characters = [
+var characters = [
     { name: "Harry Potter", img: "https://ik.imagekit.io/hpapi/harry.jpg" },
     { name: "Hermione Granger", img: "https://ik.imagekit.io/hpapi/hermione.jpeg" },
     { name: "Ron Weasley", img: "https://ik.imagekit.io/hpapi/ron.jpg" },
@@ -23,5 +23,5 @@ var Characters = [
     { name: "Lucius Malfoy", img: "https://ik.imagekit.io/hpapi/lucius.jpg" },
     { name: "Vincent Crabbe", img: "https://ik.imagekit.io/hpapi/crabbe.jpg" },
     { name: "Gregory Goyle", img: "https://ik.imagekit.io/hpapi/goyle.jpg" },
-    { name: "Mrs Norris", img: "https://ik.imagekit.io/hpapi/norris.JPG" }
+    { name: "Mrs Norris", img: "https://ik.imagekit.io/hpapi/norris.JPG" },
 ];
