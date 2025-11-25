@@ -44,29 +44,3 @@ if (!myContainer) {
             </div>`;
   });
 }
-
-const getCharacterDetails = async (characterName) => {
-  try {
-    if (typeof characters === 'undefined' || !Array.isArray(characters)) {
-      console.error('Characters array not available for getCharacterDetails');
-      return;
-    }
-
-    const character = characters.find(c => c.name === characterName);
-
-    if (character) {
-      document.title = `${character.name}`;
-      const fallbackImg = 'assets/img/Hogwarts-Crest.png';
-      const profileImgEl = document.getElementById("profileImg");
-      if (profileImgEl) {
-        profileImgEl.src = character.img || character.image || fallbackImg;
-        profileImgEl.onerror = () => {
-          profileImgEl.onerror = null;
-          profileImgEl.src = fallbackImg;
-        };
-      }
-    }
-  } catch (error) {
-    console.error('Error getting character details:', error);
-  }
-};
