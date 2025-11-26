@@ -31,7 +31,7 @@ if (!myContainer) {
                              style="background: linear-gradient(to top, rgba(0,0,0,0.95) 10%, rgba(0,0,0,0.6) 50%, transparent 100%); pointer-events: none;">
                             
                             <h3 class="text-white fw-bold text-center mb-2 px-2" 
-                                style="font-family: serif; letter-spacing: 0.5px; text-shadow: 0 2px 10px rgba(0,0,0,0.8); font-size: 1.5rem;">
+                                style="font-family: 'HarryPotter', serif; letter-spacing: 1px; text-shadow: 0 2px 10px rgba(0,0,0,1); font-size: 2.2rem;">
                                 ${character.name}
                             </h3>
                             
